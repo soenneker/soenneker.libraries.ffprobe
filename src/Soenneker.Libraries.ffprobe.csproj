@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>Simply adds the ffprobe (FFmpeg) Windows executable</Description>
+        <Description>Simply adds the ffprobe (FFmpeg) Windows executable, updated daily (if available)</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">2.1.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Libraries.ffprobe</AssemblyName>
@@ -35,7 +35,9 @@
     <ItemGroup>
         <None Include="..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\LICENSE" Pack="true" PackagePath="\" />
-        <None Include="..\icon.png" Pack="true" PackagePath="\"/>
-        <Content Include="Resources\ffprobe.exe" Pack="true" PackageCopyToOutput="true" />
+        <None Include="..\icon.png" Pack="true" PackagePath="\" />
+        <Content Include="Resources\ffprobe.exe" Pack="true" PackageCopyToOutput="true">
+          <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 </Project>

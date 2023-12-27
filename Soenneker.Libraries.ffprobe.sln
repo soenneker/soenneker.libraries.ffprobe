@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{D786EC1A-4F59-412F-8624-83E6E3525B0C}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\automerge.yml = .github\workflows\automerge.yml
+		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Soenneker.Libraries.ffprobe.Tests", "test\Soenneker.Libraries.ffprobe.Tests.csproj", "{6456E465-9523-4612-9115-9D9B585B42E8}"
