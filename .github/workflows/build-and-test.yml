@@ -46,6 +46,3 @@ jobs:
 
       - name: Test
         run: dotnet test test/Soenneker.Libraries.ffprobe.Tests/Soenneker.Libraries.ffprobe.Tests.csproj --no-restore --verbosity normal
-
-      - name: Pack
-        run: dotnet pack --no-build --configuration Release --output .
