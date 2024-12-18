@@ -9,7 +9,7 @@ namespace Soenneker.Libraries.ffprobe.Tests;
 
 public class Fixture : UnitFixture
 {
-    public override async Task InitializeAsync()
+    public override async System.Threading.Tasks.ValueTask InitializeAsync()
     {
         SetupIoC(Services);
 
