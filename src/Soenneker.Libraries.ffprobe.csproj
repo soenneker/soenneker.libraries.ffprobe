@@ -14,7 +14,7 @@
         <AssemblyName>Soenneker.Libraries.ffprobe</AssemblyName>
         <PackageId>Soenneker.Libraries.ffprobe</PackageId>
         <PackageTags>libraries ffprobe funcextensions c# .net csharp dotnet</PackageTags>
-        <Copyright>Copyright © 2023-2024 Jake Soenneker</Copyright>
+        <Copyright>Copyright © 2023-2025 Jake Soenneker</Copyright>
         <Authors>Jake Soenneker</Authors>
         <Company>https://soenneker.com</Company>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
