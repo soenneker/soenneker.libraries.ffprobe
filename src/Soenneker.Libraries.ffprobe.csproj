@@ -36,7 +36,7 @@
         <None Include="..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\icon.png" Pack="true" PackagePath="\" />
-        <Content Include="Resources\ffprobe.exe" Pack="true" PackageCopyToOutput="true">
+        <Content Include="Resources\ffprobe.exe" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Resources\">
           <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
