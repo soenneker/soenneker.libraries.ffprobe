@@ -5,7 +5,7 @@
 
 # Soenneker.Libraries.ffprobe
 
-Simply adds the ffprobe (FFmpeg) Windows executable, updated daily (if available).
+The ffprobe Windows executable packaged as a .NET content asset.
 
 ## Install
 
@@ -13,11 +13,27 @@ Simply adds the ffprobe (FFmpeg) Windows executable, updated daily (if available
 dotnet add package Soenneker.Libraries.ffprobe
 ```
 
-## What it provides
+The package copies the executable to `Resources/ffprobe.exe` beneath the application output directory.
 
-- Simply adds the ffprobe (FFmpeg) Windows executable, updated daily (if available).
-- The file is copied to the output directory, and located at the relative path: `Resources\ffprobe.exe`.
+```csharp
+string ffprobe = Path.Combine(AppContext.BaseDirectory, "Resources", "ffprobe.exe");
 
-## How to use it
+var startInfo = new ProcessStartInfo(ffprobe)
+{
+    RedirectStandardOutput = true,
+    UseShellExecute = false
+};
 
-After installation, resolve the packaged file from the output-relative path above. The package deploys the asset but does not invoke it for you.
+startInfo.ArgumentList.Add("-v");
+startInfo.ArgumentList.Add("error");
+startInfo.ArgumentList.Add("-show_streams");
+startInfo.ArgumentList.Add("-of");
+startInfo.ArgumentList.Add("json");
+startInfo.ArgumentList.Add(inputPath);
+
+using Process process = Process.Start(startInfo)!;
+string json = await process.StandardOutput.ReadToEndAsync(cancellationToken);
+await process.WaitForExitAsync(cancellationToken);
+```
+
+Check `process.ExitCode` before trusting the output. The package supplies the Windows executable but does not manage processes or parse ffprobe results.
